@@ -28,3 +28,15 @@ App只能通过系统提供的API在后台运行自己的程序，这样可以�
 在Xocde中，开发第三方App时候，默认开启ASLR支持，在编译的时候。
 
 进一步的保护是，让内存页不可执行，内存也有2个标记，可写和可执行，这被严格控制着。内核只检查动态签名，即便如此，单项调用可执行和可写，它会被随机分配一个地址。Safari的javascript JIT编译器就是如此。
+
+# Extensions
+
+iOS允许App通过Extensions提供功能，Extensions的二进制可执行文件被特殊的签名而签名，并且打包在app中。系统会自动找到Extensions在安装的时候，并且让他们可以工作。
+
+每个Extensions提供一些APIs可以被使用，每个Extensions都有一些固定功能，系统自动运行这些Extensions在系统需要的时候，并且会管理他们的生命周期。Entitlements用来限制Extensions的权限，例如Today view widget只能出现在Notification Center，Sharing只能出现在共享面板。这些Extensions通常有，Today，共享，自定义Actions，图片编辑，文档提供和自定义键盘。
+
+Extensions运行在独立的空间中，两个Extensions之间只能通过系统提供的API来通信，不能互相访问内存或者文件系统，他们相互隔离，打包在一个App中。他们之间就想我们开发的第三方App的Sandbox一样，他们共享App的权限，例如App被授权访问联系人，那么这个Extension也可以访问联系人。如果在Extension中授权了访问联系人权限，系统会吧权限给App而不是这个Extension。
+
+自定义键盘是一个特殊的Extension，它需要用户在系统设置里启用。当启用时，这个Extension将被用户用户在任何输入框中。因权限，自定义键盘默认运行在Sandbox中，它非常限制网络访问，API只能扩展用户输入数据。开发人员可以请求开放权限，系统会在用户同意后运行这个Extension。
+
+通过自定义Extension，开发人员可以用第三方的键盘给自己的App。

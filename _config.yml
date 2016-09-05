@@ -80,3 +80,11 @@ feed:
   path: atom.xml
   limit: 20
   hub:
+
+# hexo-generator-sitemap
+sitemap:
+    path: sitemap.xml
+
+# hexo-generator-baidu-sitemap
+baidusitemap:
+    path: baidusitemap.xml

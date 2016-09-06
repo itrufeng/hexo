@@ -40,3 +40,14 @@ Extensions运行在独立的空间中，两个Extensions之间只能通过系统
 自定义键盘是一个特殊的Extension，它需要用户在系统设置里启用。当启用时，这个Extension将被用户用户在任何输入框中。因权限，自定义键盘默认运行在Sandbox中，它非常限制网络访问，API只能扩展用户输入数据。开发人员可以请求开放权限，系统会在用户同意后运行这个Extension。
 
 通过自定义Extension，开发人员可以用第三方的键盘给自己的App。
+
+# App Group
+
+Apps和Extensions都是同一个开发账号下的话，他们可以共享他们的数据，当配置了App Group后。配置一次App Group, Apps就拥有一下访问权限。
+
+* 分享磁盘中的存储数据
+* 这些数据会被保存直到该Group下最后一个应用被删除。
+* 共享Preferences
+* 共享Keychain数据
+
+每一个App Group IDs都是唯一的。

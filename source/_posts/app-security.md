@@ -59,3 +59,9 @@ iOS有丰富的API让苹果内部开发人员和第三方开发者选择数据�
 系统的`Mail` app(包括附件)，被管理的书，Safari的书签，App运行图片，位置数据，被存储在安全的密码，用户的密码和指纹，日历(包括附件)，联系人，提醒事项，记事本，短信，照片都实现了`Protected Until First User Authentication`.
 
 用户自己安装的Apps是没有特殊保护的，默认只有一种保护叫做`Protected Until First User Authentication`.
+
+# Accessories
+
+iPhone, iPod touch和iPad(简称`MFi`)通过`iAP`协议来许可程序访问硬件接口。当需要用雷电接口链接设备或者通过蓝牙来访问`MFi`的时候，设备会要求访问者它需要被`Apple`提供的证书验证过。设备会发送一个`Challenge`，访问者需要回复被签名答案。这个过程和苹果设备链接设备提供的授权访问是一体的。
+
+`Accessories`可以用不同的方式来访问。例如访问数字音频流通过雷电接口，或者通过蓝牙获取定位信息。`IC`授权保证只有苹果认证的硬件才可以访问。如果访问者提供授权，它的只能访问被限制的模拟音频信号和`UART`音频控制器。`UART`我猜是播放，停止，下一曲这种简单控制。

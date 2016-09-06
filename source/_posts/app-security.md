@@ -62,8 +62,8 @@ iOS有丰富的API让苹果内部开发人员和第三方开发者选择数据�
 
 # Accessories
 
-iPhone, iPod touch和iPad(简称`MFi`)通过`iAP`协议来许可程序访问硬件接口。当需要用雷电接口链接设备或者通过蓝牙来访问`MFi`的时候，设备会要求访问者它需要被`Apple`提供的证书验证过。设备会发送一个`Challenge`，访问者需要回复被签名答案。这个过程和苹果设备链接设备提供的授权访问是一体的。
+硬件访问iPhone, iPod touch和iPad都有一个认证(简称`MFi认证`)通过`iAP`协议来许可程序访问硬件接口。当需要用雷电接口链接设备或者通过蓝牙来访问的时候，设备会要求访问者它需要被`Apple`提供的`MFi`验证过。设备会发送一个`Challenge`，访问者需要回复被签名答案。
 
-`Accessories`可以用不同的方式来访问。例如访问数字音频流通过雷电接口，或者通过蓝牙获取定位信息。`IC`授权保证只有苹果认证的硬件才可以访问。如果访问者提供授权，它的只能访问被限制的模拟音频信号和`UART`音频控制器。`UART`我猜是播放，停止，下一曲这种简单控制。
+`Accessories`可以用不同的方式来访问。例如访问数字音频流通过雷电接口，或者通过蓝牙获取定位信息。如果访问者不提供`MFi`授权，它只能访问被限制的模拟音频信号和`UART`音频控制器。`UART`我猜是播放，停止，下一曲这种简单控制。
 
-`Airplay`也利用IC来授权验证。`Airplay`音频和`CarPlay`视频流都利用了`MFi-SAP`(`Secure Association Protocol`)，他让设备和访问者之间的数据安全传输，并且使用`AES-128``CTR`模式。使用`ECDH key`交换(`Curve25519`)和被`iC's 1024-bit RSA`签名，作为`STS`(`Station-to-Station`)协议。
+`Airplay`也利用IC来授权验证。`Airplay`音频和`CarPlay`视频流都利用了`MFi-SAP`(`Secure Association Protocol`)，他让设备和访问者之间的数据安全传输，并且使用`AES-128``CTR`模式。使用`ECDH key`交换(`Curve25519`)和被`IC's 1024-bit RSA`签名，作为`STS`(`Station-to-Station`)协议。

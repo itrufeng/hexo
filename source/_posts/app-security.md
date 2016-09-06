@@ -51,3 +51,11 @@ Apps和Extensions都是同一个开发账号下的话，他们可以共享他们
 * 共享Keychain数据
 
 每一个App Group IDs都是唯一的。
+
+# Data Protection in apps
+
+iOS有丰富的API让苹果内部开发人员和第三方开发者选择数据保护来确保他们的app安全。数据保护可以用在文件和数据库，包括`NSFileManager`, `CoreData`, `NSData`, `SQLite`.
+
+系统的`Mail` app(包括附件)，被管理的书，Safari的书签，App运行图片，位置数据，被存储在安全的密码，用户的密码和指纹，日历(包括附件)，联系人，提醒事项，记事本，短信，照片都实现了`Protected Until First User Authentication`.
+
+用户自己安装的Apps是没有特殊保护的，默认只有一种保护叫做`Protected Until First User Authentication`.

@@ -8,7 +8,7 @@ tags:
 当iOS系统启动后，`App code
 signing`控制着哪些用户的进程/App可以被运行，并且确保所有的Apps来源安全，iOS要求所有的可执行代码被苹果证书签名，例如苹果自己的App，`Mail`，`Safari`呀这些。我们开发的第三方Apps同样必须被苹果证书签名，iOS强制使用信任链的概念来签名Apps，并且阻止加载未签名的App和虽然签名但是被修改了代码的App。
 
-iOS允许开发者内嵌其他的Frameworks在自己的Apps中，它可以被自己的其他内置的`extensions`调用。为了保护其他App加载第三方的代码，系统会在link的时候对第三方的代码或者动态库同样签名，签名是通过证书的`Team identifier`来做的，简称`TeamID`，它是由10位的字母和数字组成。同样`TeamID`签名的任何Library，都可以被主程序调用。
+iOS允许开发者内嵌其他的Frameworks在自己的Apps中，它可以被自己的其他内置的`extensions`调用。为了保护其他App加载第三方的代码，系统会在link的时候对第三方的代码或者动态库同样签名，签名是通过证书的`Team identifier`来做的，简称`TeamID`，它是由10位的字母和数字组成。同样`TeamID`签名的任何Library，都可以被主程序调用。!
 
 商用Apps，可以用`in-house`方式分发给员工。并且需要应用`Apple Developer Enterprise Program (ADEP)`，`ADEP`需要生成一个`Provisioning Profile`来许可自己的App被安装。只有设备安装了这个`Provisioning Profile`，才可以安装和允许商用App，这间接的确保了信任关系。
 

@@ -72,7 +72,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/itrufeng/itrufeng.github.io
+  repo: 
+    github: https://github.com/itrufeng/itrufeng.github.io
+    coding: https://git.coding.net/itrufeng/itrufeng.git
 
 # hexo-generator-feed
 feed:
